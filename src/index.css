@@ -16,6 +16,10 @@ body {
 
 #header {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   margin: 3rem auto;
 }
 
@@ -29,6 +33,9 @@ body {
 
 #header h1 {
   font-size: 1.5rem;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 #user-input {
@@ -49,7 +56,7 @@ body {
   display: block;
   margin-bottom: 0.25rem;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   font-weight: bold;
   text-transform: uppercase;
 }
