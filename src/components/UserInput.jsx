@@ -1,22 +1,7 @@
-import { useState } from "react"
+export default function UserInput({ onInputChange, userInput }){
+    
 
-export default function UserInput(){
-    const [userInput, setUserInput] =  useState({
-        initialInvestment: 1000,
-        annualInvestment: 2000,
-        expectedReturn: 7,
-        duration: 10
-    })
-
-    function handleChange(inputIdentifier, newValue){
-        setUserInput((prevUserInput) => {
-            return {
-                ...prevUserInput,
-                [inputIdentifier]: newValue
-            }
-        })
-    }
-
+   
     return <section id="user-input">
     <div className="input-group">
         <p>
@@ -24,7 +9,7 @@ export default function UserInput(){
             <input 
                 type="number" 
                 required 
-                onChange={(event) => handleChange("initialInvestment", event.target.value)}
+                onChange={(event) => onInputChange("initialInvestment", event.target.value)}
                 value={userInput.initialInvestment}
             />
         </p>
@@ -33,7 +18,7 @@ export default function UserInput(){
             <input 
                 type="number" 
                 required 
-                onCanPlay={(event) => handleChange("annualInvestment", event.target.value)}
+                onChange={(event) => onInputChange("annualInvestment", event.target.value)}
                 value={userInput.annualInvestment}
             />
         </p>
@@ -44,7 +29,7 @@ export default function UserInput(){
             <input 
                 type="number" 
                 required 
-                onChange={(event) => handleChange("expectedReturn", event.target.value)}
+                onChange={(event) => onInputChange("expectedReturn", event.target.value)}
                 value={userInput.expectedReturn}
             />
         </p>
@@ -53,7 +38,7 @@ export default function UserInput(){
             <input 
                 type="number" 
                 required 
-                onCanPlay={(event) => handleChange("duration", event.target.value)}
+                onChange={(event) => onInputChange("duration", event.target.value)}
                 value={userInput.duration}
             />
         </p>

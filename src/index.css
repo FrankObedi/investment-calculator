@@ -4,13 +4,30 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-blue: #4f6d7a;
+  --primary-blue-light: #90a4ae;
+  --secondary-warmgray: #b0a99f;
+  --secondary-warmgray-dark: #7d7670;
+  --background-dark: #23272e;
+  --background-panel: #2e323a;
+  --accent-cyan: #64b5f6;
+  --accent-yellow: #ffe082;
+  --accent-orange: #ffb347;
+  --text-main: #e3e3e3;
+  --text-muted: #b0a99f;
+}
+
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(#303b37, #1a1f1d);
-  color: #e1eeeb;
+  background: #02AAB0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #00CDAC, #02AAB0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #00CDAC, #02AAB0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: #008080;
   min-height: 100vh;
 }
 
@@ -22,7 +39,6 @@ body {
   flex-wrap: wrap;
   margin: 3rem auto;
 }
-
 
 #header img {
   width: 5rem;
@@ -36,6 +52,7 @@ body {
   text-align: left;
   text-transform: uppercase;
   margin-bottom: 0;
+  color: #ffffff;
 }
 
 #user-input {
@@ -43,7 +60,8 @@ body {
   max-width: 30rem;
   margin: 2rem auto;
   border-radius: 4px;
-  background: linear-gradient(180deg, #307e6c, #2b996d);
+  background: linear-gradient(180deg, #f1f5f4 0%, #e6f2ef 100%);
+  box-shadow: 0 2px 8px rgba(0,128,128,0.08);
 }
 
 .input-group {
@@ -59,16 +77,24 @@ body {
   font-size: 0.7rem;
   font-weight: bold;
   text-transform: uppercase;
+  color: #008080;
 }
 
 #user-input input {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #76c0ae;
+  border: 1px solid #20b2aa;
   border-radius: 0.25rem;
-  background-color: transparent;
-  color: #c2e9e0;
+  background-color: #f8f9fa;
+  color: #008080;
   font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+#user-input input:focus {
+  border-color: #008080;
+  outline: none;
+  background-color: #e6f2ef;
 }
 
 #result {
@@ -78,19 +104,23 @@ body {
   table-layout: fixed;
   border-spacing: 1rem;
   text-align: right;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,128,128,0.08);
 }
 
 #result thead {
-  font-size: 0.7rem;
-  color: #83e6c0;
+  font-size: 0.8rem;
+  color: #20b2aa;
 }
 
 #result tbody {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 0.85rem;
-  color: #c2e9e0;
+  color: #008080;
 }
 
 .center {
   text-align: center;
+  color: #008080;
 }
